@@ -33,7 +33,8 @@ def micro_forum():
     if request.method == 'GET':
         new_message = request.args.get('nm')
         if new_message:
-            add_message(new_message)
+            if len(new_message) < 10000:
+                add_message(new_message)
 
     last_n_message_items = get_last_n()
     return render_template("minimal_forum.html", message_items=last_n_message_items)
