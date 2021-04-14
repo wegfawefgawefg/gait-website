@@ -38,9 +38,10 @@
   <body>
     <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="grid-container"></div>
     <div class="grid-container full">
       <form class="" action="/" method="GET">
-        <input type="text" name="nm" autofocus /><br /><br />
+        <input style="width: 80%;" type="text" name="nm" autofocus /><br /><br />
       </form>
     </div>
     <div class="grid-container full">
@@ -50,7 +51,7 @@
           <div class="u-align-right">
             <em>{{ message_item["time"] }}</em>
           </div>
-          <div class="u-align-left">
+          <div class="u-align-left line-break">
             <article>{{ message_item["msg"] }}</article>
           </div>
         </div>

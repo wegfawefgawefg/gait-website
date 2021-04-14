@@ -163,11 +163,14 @@ html {
 	
 }
 
+.line-break {
+    overflow-wrap: anywhere;
+}
 
-
-
-
-
+/*
+.datetime {
+    color: rgba(56, 56, 56, 0.5);
+}*/
 
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
