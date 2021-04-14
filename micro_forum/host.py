@@ -1,13 +1,11 @@
+import json
+import datetime
+
 from flask import Flask
 from flask import request
 from flask import render_template
-import json
 
-import datetime
-
-app = Flask(__name__)
-
-import os
+from micro_forum import app
 
 def get_last_n(N=20):
     with open("messages.json") as f:
