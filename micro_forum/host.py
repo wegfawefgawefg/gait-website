@@ -5,17 +5,17 @@ from flask import Flask
 from flask import request
 from flask import render_template
 
-from micro_forum import app
+from micro_forum import app, db
 
 def get_last_n(N=20):
-    with open("messages.json") as f:
+    with open(db) as f:
         j = json.load(f)
         messages = j["messages"]
         last_n = list(reversed(messages[-N:]))
     return last_n
 
 def add_message(message):
-    with open("messages.json") as f:
+    with open(db) as f:
         j = json.load(f)
         messages = j["messages"]
         new_message = {
@@ -23,7 +23,7 @@ def add_message(message):
             "msg": message}
         messages.append(new_message)
         
-    with open("messages.json", 'w') as f:
+    with open(db, 'w') as f:
         json.dump(j, f)
 
 @app.route('/', methods=['GET'])
