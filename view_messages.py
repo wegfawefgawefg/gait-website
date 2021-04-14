@@ -4,5 +4,6 @@ import json
 
 from micro_forum import db
 
-j = json.load(db)
-pprint(j)
+with open(db) as f:
+    j = json.load(f)
+    pprint(j)
