@@ -29,7 +29,7 @@ def add_message(message):
         json.dump(j, f)
 
 @app.route('/', methods=['GET'])
-def micro_forum():
+def main():
     if request.method == 'GET':
         new_message = request.args.get('nm')
         if new_message:
