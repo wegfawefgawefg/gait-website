@@ -8,7 +8,7 @@ from flask import url_for, redirect
 
 from micro_forum import app, db
 
-def get_last_n(N=20):
+def get_last_n(N=100):
     with open(db) as f:
         j = json.load(f)
         messages = j["messages"]
