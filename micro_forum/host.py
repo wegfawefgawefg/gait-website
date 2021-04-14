@@ -4,6 +4,7 @@ import datetime
 from flask import Flask
 from flask import request
 from flask import render_template
+from flask import url_for, redirect
 
 from micro_forum import app, db
 
@@ -33,6 +34,7 @@ def main():
         if new_message:
             if len(new_message) < 10000:
                 add_message(new_message)
+                return redirect(url_for('main'))
 
     last_n_message_items = get_last_n()
     return render_template("minimal_forum.html", message_items=last_n_message_items)
